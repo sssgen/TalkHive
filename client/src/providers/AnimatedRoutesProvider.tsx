@@ -1,11 +1,10 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 
-import MainPage from "../components/pages/MainPage";
-import ChatPage from "../components/pages/ChatPage";
+import MainPage from "../components/pages/MainPage/MainPage";
+import ChatPage from "../components/pages/ChatPage/ChatPage";
 import SignIn from "../components/pages/auth/SignIn";
 import SignUp from "../components/pages/auth/SignUp";
-import SearchPage from "../components/pages/SearchPage";
-import SettingsPage from "../components/pages/SettingsPage";
+import SettingsPage from "../components/pages/SettingsPage/SettingsPage";
 
 import { AnimatePresence } from "framer-motion";
 
@@ -16,7 +15,6 @@ const AnimatedRoutesProvider = () => {
             <Routes location={location} key={location.pathname}>
                 <Route path='/' element={<MainPage />} />
                 <Route path='/chats' element={<ChatPage />} />
-                <Route path='/search' element={<SearchPage />} />
                 <Route path='/settings' element={<SettingsPage />} />
                 <Route path='/sign-in' element={<SignIn />} />
                 <Route path='/sign-up' element={<SignUp />} />

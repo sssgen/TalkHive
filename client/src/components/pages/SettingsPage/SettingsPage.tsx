@@ -1,9 +1,9 @@
 import { memo } from "react";
 import { motion } from "framer-motion";
 
-import "./_styles/ChatPage.scss";
+import "../_styles/SettingsPage.scss";
 
-const ChatPage = () => {
+const SettingsPage = () => {
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -11,9 +11,9 @@ const ChatPage = () => {
             exit={{ opacity: 0, transition: { duration: 0.2 } }}
             className='chat'
         >
-            chat
+            settings
         </motion.div>
     );
 };
 
-export default memo(ChatPage);
+export default memo(SettingsPage);

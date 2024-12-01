@@ -1,9 +1,11 @@
 import { memo } from "react";
 import { motion } from "framer-motion";
 
-import "./_styles/SearchPage.scss";
+import "../_styles/ChatPage.scss";
+import { Sidebar } from "./Sidebar";
+import { Frame as ChatFrame } from "./ChatFrame";
 
-const SearchPage = () => {
+const ChatPage = () => {
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -11,9 +13,14 @@ const SearchPage = () => {
             exit={{ opacity: 0, transition: { duration: 0.2 } }}
             className='chat'
         >
-            search
+            <aside>
+                <Sidebar />
+            </aside>
+            <section>
+                <ChatFrame />
+            </section>
         </motion.div>
     );
 };
 
-export default memo(SearchPage);
+export default memo(ChatPage);

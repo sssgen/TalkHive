@@ -1,11 +1,11 @@
-import "./_styles/MainPage.scss";
+import "../_styles/MainPage.scss";
 import { memo } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRightCircleIcon } from "lucide-react";
-import Button from "../ui/button/Button";
+import Button from "../../ui/button/Button";
 
 import { motion } from "framer-motion";
-import { TRANSITION_MAIN } from "../../constants";
+import { TRANSITION_MAIN } from "../../../constants";
 
 const MainPage = () => {
     return (
