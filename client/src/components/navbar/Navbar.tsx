@@ -8,10 +8,17 @@ import { memo } from "react";
 import { Link } from "react-router-dom";
 
 import "./Navbar.scss";
+import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
+    const location = useLocation();
+
     return (
-        <nav className='navbar'>
+        <nav
+            className={`navbar ${
+                location.pathname.includes("/sign") ? "hidden" : ""
+            }`}
+        >
             <NavbarLink href={"/"}>
                 <HomeIcon />
             </NavbarLink>

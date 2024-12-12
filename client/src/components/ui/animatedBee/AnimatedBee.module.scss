@@ -1,0 +1,18 @@
+@keyframes fly {
+    0% {
+        transform: translate(0%, 0%) rotate(0deg);
+    }
+    50% {
+        transform: translate(-80%, 30%) rotate(10deg);
+    }
+    100% {
+        transform: translate(0%, 0%) rotate(0deg);
+    }
+}
+
+.flyingBee {
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    animation: fly 14s reverse infinite;
+}

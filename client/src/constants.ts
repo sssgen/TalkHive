@@ -4,8 +4,3 @@ export const TRANSITION_MAIN = {
     stiffness: 150,
     damping: 25,
 };
-
-export const TRANSITION_SECONDARY = {
-    duration: 1,
-    ease: "easeIn",
-};
