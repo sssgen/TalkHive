@@ -12,7 +12,12 @@ const defaultOptions = {
 const AnimatedBee = () => {
     return (
         <div className={styles.flyingBee}>
-            <Lottie options={defaultOptions} height={600} width={600} />
+            <Lottie
+                options={defaultOptions}
+                height={600}
+                width={600}
+                isClickToPauseDisabled
+            />
         </div>
     );
 };

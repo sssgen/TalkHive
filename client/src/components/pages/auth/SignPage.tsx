@@ -1,37 +1,13 @@
-import "../_styles/auth/SignPage.scss";
 import { memo, useState } from "react";
 import { motion } from "framer-motion";
 
-import Button from "../../ui/button/Button";
-
-import { auth } from "../../../../config/firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import "../_styles/auth/SignPage.scss";
 import AnimatedBee from "../../ui/animatedBee/AnimatedBee";
+import SignInForm from "./SignInForm";
+import SignUpForm from "./SignUpForm";
 
 const SignPage = () => {
-    const [email, setEmail] = useState<string>("");
-    const [password, setPassword] = useState<string>("");
-    const [isLoading, setIsLoading] = useState<boolean>(false);
-
-    async function onSignIn() {
-        try {
-            setIsLoading(true);
-            await createUserWithEmailAndPassword(auth, email, password);
-            setEmail("");
-            setPassword("");
-        } catch (e) {
-            console.log("error:", e);
-        } finally {
-            setIsLoading(false);
-        }
-    }
-
-    function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-        event.preventDefault();
-        if (email.trim() !== "" && password.trim() !== "") {
-            onSignIn();
-        }
-    }
+    const [isSignIn, setIsSignIn] = useState(true);
 
     return (
         <motion.div
@@ -41,23 +17,11 @@ const SignPage = () => {
             className='signWrapper'
         >
             <div className='signForm'>
-                <form onSubmit={handleSubmit}>
-                    <div>
-                        <input
-                            placeholder='Email...'
-                            type='email'
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                        />
-                        <input
-                            placeholder='Password...'
-                            type='password'
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                        />
-                    </div>
-                    <Button title='Sign In' disabled={isLoading} />
-                </form>
+                {isSignIn ? (
+                    <SignInForm isSignIn={isSignIn} setIsSignIn={setIsSignIn} />
+                ) : (
+                    <SignUpForm isSignIn={isSignIn} setIsSignIn={setIsSignIn} />
+                )}
             </div>
             <div className='signImage'>
                 <AnimatedBee />

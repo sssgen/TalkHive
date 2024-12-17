@@ -26,7 +26,7 @@ const Hero = () => {
     return (
         <header className='hero'>
             <div className='hero__wrapper'>
-                <Link to='/sign-in'>
+                <Link to='/sign'>
                     <h1>
                         Talk<span>Hive</span>
                         <ArrowRightCircleIcon />
@@ -37,7 +37,7 @@ const Hero = () => {
                     <br /> join some chat?
                 </h2>
 
-                <Link to='/sign-in' tabIndex={-1}>
+                <Link to='/sign' tabIndex={-1}>
                     <Button variant='default' title='Are you really asking?' />
                 </Link>
             </div>
